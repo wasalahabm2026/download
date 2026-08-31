@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 
   <meta charset="UTF-8">
@@ -118,9 +119,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        HEADER
-       ========================= */
+       ============================== */
 
     header {
 
@@ -143,8 +144,6 @@
 
       font-weight: 900;
 
-      color: #fff;
-
     }
 
 
@@ -164,9 +163,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        MAIN
-       ========================= */
+       ============================== */
 
     main {
 
@@ -185,13 +184,14 @@
 
     .card {
 
-      width: min(920px, 100%);
+      width: min(920px,100%);
 
       padding: 38px;
 
       border-radius: 30px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid var(--line);
 
       background:
 
@@ -233,9 +233,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        HERO
-       ========================= */
+       ============================== */
 
     .hero {
 
@@ -254,9 +254,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        LOGO
-       ========================= */
+       ============================== */
 
     .logo {
 
@@ -302,9 +302,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        CONTENT
-       ========================= */
+       ============================== */
 
     .content {
 
@@ -363,7 +363,7 @@
       margin: 17px 0 5px;
 
       font-size:
-        clamp(42px, 6vw, 65px);
+        clamp(42px,6vw,65px);
 
       line-height: 1;
 
@@ -384,7 +384,7 @@
     .slogan {
 
       font-size:
-        clamp(21px, 3vw, 30px);
+        clamp(21px,3vw,30px);
 
       font-weight: 900;
 
@@ -408,9 +408,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        DOWNLOAD BUTTON
-       ========================= */
+       ============================== */
 
     .download {
 
@@ -485,9 +485,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        STATS
-       ========================= */
+       ============================== */
 
     .stats {
 
@@ -549,9 +549,9 @@
     }
 
 
-    /* =========================
-       INFORMATION
-       ========================= */
+    /* ==============================
+       INFO
+       ============================== */
 
     .info {
 
@@ -594,9 +594,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        STATUS
-       ========================= */
+       ============================== */
 
     .status {
 
@@ -613,9 +613,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        FOOTER
-       ========================= */
+       ============================== */
 
     footer {
 
@@ -639,9 +639,9 @@
     }
 
 
-    /* =========================
+    /* ==============================
        LOADING
-       ========================= */
+       ============================== */
 
     .loading {
 
@@ -652,7 +652,6 @@
       height: 14px;
 
       border:
-
         2px solid
         rgba(255,255,255,.25);
 
@@ -674,17 +673,20 @@
     @keyframes spin {
 
       to {
-        transform: rotate(360deg);
+
+        transform:
+          rotate(360deg);
+
       }
 
     }
 
 
-    /* =========================
+    /* ==============================
        MOBILE
-       ========================= */
+       ============================== */
 
-    @media (max-width: 720px) {
+    @media(max-width:720px) {
 
       main {
 
@@ -761,7 +763,7 @@
     }
 
 
-    @media (max-width: 390px) {
+    @media(max-width:390px) {
 
       .stats {
 
@@ -801,12 +803,11 @@
 
 <body>
 
+
 <div class="page">
 
 
-  <!-- =========================
-       HEADER
-       ========================= -->
+  <!-- HEADER -->
 
   <header>
 
@@ -823,9 +824,7 @@
   </header>
 
 
-  <!-- =========================
-       MAIN
-       ========================= -->
+  <!-- MAIN -->
 
   <main>
 
@@ -833,6 +832,7 @@
       class="card"
       aria-label="تحميل تطبيق وصّلها BM"
     >
+
 
       <div class="hero">
 
@@ -844,7 +844,6 @@
           <img
             src="assets/logo.png"
             alt="لوجو وصّلها BM"
-            onerror="this.style.display='none';"
           >
 
         </div>
@@ -856,18 +855,27 @@
 
 
           <div class="badge">
+
             التطبيق الرسمي
+
           </div>
 
 
           <h1>
+
             وصّلها
-            <span>BM</span>
+
+            <span>
+              BM
+            </span>
+
           </h1>
 
 
           <div class="slogan">
+
             اطلبها... وإحنا نوصلها!
+
           </div>
 
 
@@ -880,7 +888,7 @@
           </p>
 
 
-          <!-- DOWNLOAD -->
+          <!-- DOWNLOAD BUTTON -->
 
           <button
             id="downloadBtn"
@@ -901,14 +909,18 @@
             <div class="stat">
 
               <span class="label">
+
                 ⬇️ عدد التحميلات
+
               </span>
 
               <span
                 id="downloads"
                 class="value"
               >
+
                 --
+
               </span>
 
             </div>
@@ -917,14 +929,18 @@
             <div class="stat">
 
               <span class="label">
+
                 👁️ المشاهدات
+
               </span>
 
               <span
                 id="views"
                 class="value"
               >
+
                 --
+
               </span>
 
             </div>
@@ -933,7 +949,7 @@
           </div>
 
 
-          <!-- APP INFO -->
+          <!-- INFO -->
 
           <div class="info">
 
@@ -941,6 +957,7 @@
             <div class="pill">
 
               📱
+
               <b>
                 Android
               </b>
@@ -951,6 +968,7 @@
             <div class="pill">
 
               الإصدار
+
               <b id="version">
                 1.0.0
               </b>
@@ -961,6 +979,7 @@
             <div class="pill">
 
               APK
+
               <b>
                 BM.apk
               </b>
@@ -978,7 +997,7 @@
             class="status"
           >
 
-            جاري جلب بيانات التحميلات...
+            جاري جلب عدد التحميلات...
 
           </div>
 
@@ -992,9 +1011,7 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -1017,478 +1034,629 @@
 
 <script>
 
+
+/*
+=====================================================
+إعدادات الموقع
+=====================================================
+*/
+
+
+const CONFIG = {
+
+
   /*
-  =====================================================
-  إعدادات التطبيق
-  =====================================================
+  اسم التطبيق
   */
 
-  const CONFIG = {
+  appName:
+    "وصّلها BM",
 
-    appName: "وصّلها BM",
 
-    version: "1.0.0",
+  /*
+  إصدار التطبيق
+  */
 
-    githubOwner: "wasalahabm2026",
+  version:
+    "1.0.0",
 
-    githubRepo: "download",
 
-    releaseTag: "v1.0.0",
+  /*
+  ===================================================
+  رابط APK الحقيقي
+  ===================================================
 
-    apkFileName: "BM.apk",
+  ده رابط ملف BM.apk الموجود في GitHub Release
+  */
+
+  apkUrl:
+    "https://github.com/wasalahabm2026/download/releases/download/v1.0.0/BM.apk",
+
+
+  /*
+  ===================================================
+  إعدادات العداد
+  ===================================================
+
+  نستخدم عدادًا مركزيًا مستقلًا عن GitHub.
+
+  Namespace:
+  wasalahabm2026
+
+  Key:
+  downloads
+
+  كل ضغطة على تحميل = +1
+  */
+
+  counterNamespace:
+    "wasalahabm2026",
+
+
+  counterKey:
+    "downloads",
+
+
+  /*
+  عداد المشاهدات
+
+  كل فتح للصفحة = +1
+
+  لو مش عايزه ممكن نخليه false.
+  */
+
+  countViews:
+    true
+
+};
+
+
+/*
+=====================================================
+عناصر الصفحة
+=====================================================
+*/
+
+
+const downloadBtn =
+  document.getElementById(
+    "downloadBtn"
+  );
+
+
+const downloadsElement =
+  document.getElementById(
+    "downloads"
+  );
+
+
+const viewsElement =
+  document.getElementById(
+    "views"
+  );
+
+
+const statusElement =
+  document.getElementById(
+    "status"
+  );
+
+
+const versionElement =
+  document.getElementById(
+    "version"
+  );
+
+
+/*
+=====================================================
+عرض الإصدار
+=====================================================
+*/
+
+
+versionElement.textContent =
+  CONFIG.version;
+
+
+/*
+=====================================================
+تنسيق الأرقام
+=====================================================
+*/
+
+
+function formatNumber(number) {
+
+
+  if (
+    typeof number !== "number" ||
+    Number.isNaN(number)
+  ) {
+
+    return "--";
+
+  }
+
+
+  return new Intl.NumberFormat(
+    "ar-EG"
+  ).format(number);
+
+}
+
+
+/*
+=====================================================
+تغيير حالة الموقع
+=====================================================
+*/
+
+
+function setStatus(message) {
+
+  statusElement.innerHTML =
+    message;
+
+}
+
+
+/*
+=====================================================
+رابط Counter API
+=====================================================
+*/
+
+
+function counterUrl(
+  type
+) {
+
+
+  return (
+
+    "https://abacus.jasoncameron.dev/" +
+
+    type +
+
+    "/" +
+
+    encodeURIComponent(
+      CONFIG.counterNamespace
+    ) +
+
+    "/" +
+
+    encodeURIComponent(
+      CONFIG.counterKey
+    )
+
+  );
+
+}
+
+
+/*
+=====================================================
+قراءة عداد التحميلات
+=====================================================
+*/
+
+
+async function getDownloadCount() {
+
+
+  try {
+
+
+    const response =
+      await fetch(
+
+        counterUrl("get"),
+
+        {
+
+          method:
+            "GET",
+
+          cache:
+            "no-store"
+
+        }
+
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Counter API error: " +
+        response.status
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
 
     /*
-    رابط التحميل المباشر الاحتياطي.
+    API يرجع:
+
+    {
+      "value": 123
+    }
     */
 
-    directDownloadUrl:
-      "https://github.com/wasalahabm2026/download/releases/download/v1.0.0/BM.apk"
 
-  };
+    const value =
+      Number(data.value);
 
-
-  /*
-  =====================================================
-  عناصر الصفحة
-  =====================================================
-  */
-
-  const downloadBtn =
-    document.getElementById("downloadBtn");
-
-  const downloadsElement =
-    document.getElementById("downloads");
-
-  const viewsElement =
-    document.getElementById("views");
-
-  const statusElement =
-    document.getElementById("status");
-
-  const versionElement =
-    document.getElementById("version");
-
-
-  /*
-  =====================================================
-  بيانات التطبيق
-  =====================================================
-  */
-
-  versionElement.textContent =
-    CONFIG.version;
-
-
-  /*
-  =====================================================
-  رابط التحميل
-  =====================================================
-  */
-
-  let downloadUrl =
-    CONFIG.directDownloadUrl;
-
-
-  /*
-  =====================================================
-  تنسيق الأرقام
-  =====================================================
-  */
-
-  function formatNumber(number) {
 
     if (
-      typeof number !== "number" ||
-      Number.isNaN(number)
+      Number.isFinite(value)
     ) {
 
-      return "--";
+      downloadsElement.textContent =
+        formatNumber(value);
 
     }
 
-    return new Intl.NumberFormat(
-      "ar-EG"
-    ).format(number);
+
+  }
+
+  catch(error) {
+
+
+    console.error(
+      "Download counter error:",
+      error
+    );
+
+
+    downloadsElement.textContent =
+      "--";
+
+  }
+
+}
+
+
+/*
+=====================================================
+زيادة عداد التحميلات
+=====================================================
+*/
+
+
+async function incrementDownloadCount() {
+
+
+  try {
+
+
+    /*
+    hit = زيادة العداد + إرجاع القيمة الجديدة
+    */
+
+    const response =
+      await fetch(
+
+        counterUrl("hit"),
+
+        {
+
+          method:
+            "GET",
+
+          cache:
+            "no-store"
+
+        }
+
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Counter increment error: " +
+        response.status
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    /*
+    القيمة الجديدة
+    */
+
+    const newValue =
+      Number(data.value);
+
+
+    if (
+      Number.isFinite(newValue)
+    ) {
+
+      /*
+      تحديث الرقم فورًا
+      */
+
+      downloadsElement.textContent =
+        formatNumber(newValue);
+
+    }
+
+
+    return true;
+
+  }
+
+  catch(error) {
+
+
+    console.error(
+      "Download counter increment error:",
+      error
+    );
+
+
+    return false;
+
+  }
+
+}
+
+
+/*
+=====================================================
+عداد المشاهدات
+=====================================================
+*/
+
+
+async function incrementViewCount() {
+
+
+  if (!CONFIG.countViews) {
+
+    viewsElement.textContent =
+      "--";
+
+    return;
 
   }
 
 
-  /*
-  =====================================================
-  تغيير رسالة الحالة
-  =====================================================
-  */
+  try {
 
-  function setStatus(message) {
 
-    if (statusElement) {
+    /*
+    نستخدم مفتاح مختلف للمشاهدات
+    */
 
-      statusElement.innerHTML =
-        message;
+    const viewUrl =
+
+      "https://abacus.jasoncameron.dev/hit/" +
+
+      encodeURIComponent(
+        CONFIG.counterNamespace
+      ) +
+
+      "/views";
+
+
+    const response =
+      await fetch(
+
+        viewUrl,
+
+        {
+
+          method:
+            "GET",
+
+          cache:
+            "no-store"
+
+        }
+
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "View counter error"
+      );
 
     }
 
+
+    const data =
+      await response.json();
+
+
+    const value =
+      Number(data.value);
+
+
+    if (
+      Number.isFinite(value)
+    ) {
+
+      viewsElement.textContent =
+        formatNumber(value);
+
+    }
+
+
   }
 
+  catch(error) {
 
-  /*
-  =====================================================
-  جلب بيانات GitHub Release
-  =====================================================
-  */
 
-  async function loadGitHubRelease() {
+    console.error(
+      "View counter error:",
+      error
+    );
+
+
+    viewsElement.textContent =
+      "--";
+
+  }
+
+}
+
+
+/*
+=====================================================
+تحميل البيانات عند فتح الموقع
+=====================================================
+*/
+
+
+getDownloadCount();
+
+
+/*
+=====================================================
+عداد المشاهدات
+=====================================================
+*/
+
+
+incrementViewCount();
+
+
+/*
+=====================================================
+زر تحميل التطبيق
+=====================================================
+*/
+
+
+downloadBtn.addEventListener(
+
+  "click",
+
+  async function() {
+
+
+    /*
+    منع الضغط المكرر
+    */
+
+    downloadBtn.disabled =
+      true;
+
+
+    /*
+    تغيير النص مؤقتًا
+    */
+
+    downloadBtn.textContent =
+      "جاري تجهيز التحميل...";
+
 
     setStatus(
-      '<span class="loading"></span> جاري جلب عدد التحميلات...'
+      '<span class="loading"></span> جاري تسجيل التحميل...'
     );
 
 
     /*
-    رابط GitHub API
+    =================================================
+    زيادة العداد
+    =================================================
+
+    نستنى نتيجة العداد أولًا.
+
+    بمجرد نجاح العملية:
+    الرقم يظهر فورًا.
     */
 
-    const apiUrl =
-      "https://api.github.com/repos/" +
-
-      encodeURIComponent(
-        CONFIG.githubOwner
-      ) +
-
-      "/" +
-
-      encodeURIComponent(
-        CONFIG.githubRepo
-      ) +
-
-      "/releases/tags/" +
-
-      encodeURIComponent(
-        CONFIG.releaseTag
-      );
+    const counted =
+      await incrementDownloadCount();
 
 
-    try {
+    /*
+    =================================================
+    لو العداد اشتغل
+    =================================================
+    */
 
+    if (counted) {
 
-      const response =
-        await fetch(
-
-          apiUrl,
-
-          {
-
-            method: "GET",
-
-            headers: {
-
-              "Accept":
-                "application/vnd.github+json",
-
-              "X-GitHub-Api-Version":
-                "2022-11-28"
-
-            },
-
-            cache: "no-store"
-
-          }
-
-        );
-
-
-      /*
-      التأكد أن GitHub رد بنجاح
-      */
-
-      if (!response.ok) {
-
-        throw new Error(
-          "GitHub API HTTP " +
-          response.status
-        );
-
-      }
-
-
-      /*
-      تحويل الرد إلى JSON
-      */
-
-      const release =
-        await response.json();
-
-
-      console.log(
-        "GitHub Release:",
-        release
-      );
-
-
-      /*
-      جميع الملفات الموجودة في Release
-      */
-
-      const assets =
-        Array.isArray(release.assets)
-          ? release.assets
-          : [];
-
-
-      /*
-      البحث عن BM.apk
-      */
-
-      const apk =
-        assets.find(
-
-          function(asset) {
-
-            return (
-
-              String(asset.name)
-                .trim()
-                .toLowerCase()
-
-              ===
-
-              CONFIG.apkFileName
-                .trim()
-                .toLowerCase()
-
-            );
-
-          }
-
-        );
-
-
-      /*
-      لو الملف غير موجود
-      */
-
-      if (!apk) {
-
-        console.error(
-          "GitHub Assets:",
-          assets.map(
-            function(asset) {
-              return asset.name;
-            }
-          )
-        );
-
-
-        throw new Error(
-          "لم يتم العثور على ملف " +
-          CONFIG.apkFileName +
-          " داخل Release."
-        );
-
-      }
-
-
-      /*
-      =================================================
-      رابط التحميل الحقيقي
-      =================================================
-      */
-
-      if (
-        apk.browser_download_url
-      ) {
-
-        downloadUrl =
-          apk.browser_download_url;
-
-      }
-
-
-      /*
-      =================================================
-      عدد التحميلات
-      =================================================
-      */
-
-      const downloadCount =
-        Number(
-          apk.download_count || 0
-        );
-
-
-      downloadsElement.textContent =
-        formatNumber(
-          downloadCount
-        );
-
-
-      /*
-      =================================================
-      حالة الموقع
-      =================================================
-      */
 
       setStatus(
-        "عدد التحميلات يتم قراءته مباشرة من GitHub."
-      );
-
-
-      /*
-      =================================================
-      معلومات إضافية في Console
-      =================================================
-      */
-
-      console.log(
-        "اسم الملف:",
-        apk.name
-      );
-
-      console.log(
-        "عدد التحميلات:",
-        apk.download_count
-      );
-
-      console.log(
-        "رابط التحميل:",
-        apk.browser_download_url
+        "تم تسجيل التحميل، جاري فتح التطبيق..."
       );
 
 
     }
 
-    catch (error) {
+    else {
 
 
       /*
-      طباعة الخطأ للمطور
-      */
-
-      console.error(
-        "GitHub Release Error:",
-        error
-      );
-
-
-      /*
-      نستخدم الرابط المباشر
-      */
-
-      downloadUrl =
-        CONFIG.directDownloadUrl;
-
-
-      /*
-      لا نضع رقمًا وهميًا
-      */
-
-      downloadsElement.textContent =
-        "--";
-
-
-      /*
-      رسالة للمستخدم
+      حتى لو خدمة العداد لم تعمل،
+      لا نمنع المستخدم من تحميل التطبيق.
       */
 
       setStatus(
-        "تعذر تحديث عداد التحميلات حاليًا، لكن زر التحميل يعمل."
+        "جاري فتح تحميل التطبيق..."
       );
 
     }
+
+
+    /*
+    =================================================
+    فتح APK
+    =================================================
+
+    نستخدم رابط GitHub المباشر.
+    */
+
+    window.location.href =
+      CONFIG.apkUrl;
 
   }
 
-
-  /*
-  =====================================================
-  زر تحميل التطبيق
-  =====================================================
-  */
-
-  downloadBtn.addEventListener(
-    "click",
-
-    function() {
+);
 
 
-      /*
-      التأكد من وجود الرابط
-      */
-
-      if (!downloadUrl) {
-
-        downloadUrl =
-          CONFIG.directDownloadUrl;
-
-      }
+/*
+=====================================================
+تحديث عداد التحميلات تلقائيًا
+كل دقيقة
+=====================================================
+*/
 
 
-      /*
-      رسالة قبل التحميل
-      */
+setInterval(
 
-      setStatus(
-        "جاري بدء تحميل تطبيق وصّلها BM..."
-      );
+  function() {
 
+    getDownloadCount();
 
-      /*
-      التحميل المباشر
-      */
+  },
 
-      window.location.href =
-        downloadUrl;
+  60000
 
-    }
+);
 
-  );
-
-
-  /*
-  =====================================================
-  المشاهدات
-  =====================================================
-
-  GitHub Pages لا يوفر عداد مشاهدات
-  إجمالي حقيقي من JavaScript وحده.
-
-  لذلك لا نعرض رقمًا وهميًا.
-  */
-
-  viewsElement.textContent =
-    "--";
-
-
-  /*
-  =====================================================
-  تشغيل أول مرة
-  =====================================================
-  */
-
-  loadGitHubRelease();
-
-
-  /*
-  =====================================================
-  تحديث عداد التحميلات
-  كل 60 ثانية
-  =====================================================
-  */
-
-  setInterval(
-
-    function() {
-
-      loadGitHubRelease();
-
-    },
-
-    60000
-
-  );
 
 </script>
 
 
 </body>
+
 </html>
