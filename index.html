@@ -1,74 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#111827">
-  <meta name="description" content="حمّل تطبيق وصّلها BM واطلب أكلك المفضل بسهولة من مطاعمك المفضلة.">
-  <meta property="og:type" content="website">
+  <meta name="description" content="وصّلها BM - اطلبها... وإحنا نوصلها! حمّل التطبيق الآن.">
+
   <meta property="og:title" content="وصّلها BM | اطلبها... وإحنا نوصلها!">
-  <meta property="og:description" content="وصّلها BM - اطلبها... وإحنا نوصلها!">
-  <meta property="og:image" content="assets/logo.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="وصّلها BM | اطلبها... وإحنا نوصلها!">
-  <meta name="twitter:description" content="حمّل تطبيق وصّلها BM واطلب أكلك المفضل بسهولة.">
+  <meta property="og:description" content="حمّل تطبيق وصّلها BM واطلب أكلك المفضل بسهولة.">
+  <meta property="og:type" content="website">
+
   <title>وصّلها BM | اطلبها... وإحنا نوصلها!</title>
-  <link rel="icon" href="assets/logo.png">
 
   <style>
     :root{
       --yellow:#FFB800;
       --yellow-2:#FFC933;
       --navy:#111827;
-      --navy-2:#0B1220;
+      --navy2:#0b1220;
       --card:#182235;
-      --muted:#9CA3AF;
       --white:#fff;
-      --border:rgba(255,255,255,.09);
+      --muted:#9ca3af;
+      --line:rgba(255,255,255,.09);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       min-height:100vh;
-      font-family:Tahoma, Arial, "Segoe UI", sans-serif;
+      font-family:"Segoe UI",Tahoma,Arial,sans-serif;
       color:var(--white);
+
       background:
-        radial-gradient(circle at 50% 8%, rgba(255,184,0,.13), transparent 28%),
-        radial-gradient(circle at 10% 80%, rgba(30,64,175,.12), transparent 28%),
-        var(--navy-2);
+        radial-gradient(
+          circle at 50% 5%,
+          rgba(255,184,0,.13),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 10% 80%,
+          rgba(30,64,175,.10),
+          transparent 28%
+        ),
+        var(--navy2);
+
       overflow-x:hidden;
     }
 
-    .page{min-height:100vh;display:flex;flex-direction:column}
-
-    .topbar{
-      width:min(1120px, calc(100% - 32px));
-      margin:0 auto;
-      padding:22px 0 8px;
+    .page{
+      min-height:100vh;
       display:flex;
-      justify-content:center;
-      position:relative;
-      z-index:2;
+      flex-direction:column;
+    }
+
+    header{
+      padding:24px 18px 10px;
+      text-align:center;
     }
 
     .brand{
       display:inline-flex;
       align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:var(--white);
-      font-weight:800;
+      gap:9px;
       font-size:20px;
+      font-weight:900;
+      user-select:none;
     }
 
-    .brand-dot{
-      width:11px;
-      height:11px;
-      background:var(--yellow);
+    .dot{
+      width:10px;
+      height:10px;
       border-radius:50%;
-      box-shadow:0 0 22px rgba(255,184,0,.75);
+      background:var(--yellow);
+      box-shadow:0 0 18px rgba(255,184,0,.75);
     }
 
     main{
@@ -76,17 +88,20 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:34px 16px 60px;
+      padding:30px 16px 55px;
     }
 
-    .shell{width:min(960px,100%);position:relative}
+    .shell{
+      width:min(920px,100%);
+      position:relative;
+    }
 
     .glow{
       position:absolute;
       width:420px;
       height:420px;
       border-radius:50%;
-      background:rgba(255,184,0,.08);
+      background:rgba(255,184,0,.07);
       filter:blur(65px);
       top:5%;
       left:50%;
@@ -96,75 +111,108 @@
 
     .card{
       position:relative;
-      background:linear-gradient(145deg, rgba(24,34,53,.95), rgba(17,24,39,.96));
-      border:1px solid var(--border);
-      border-radius:32px;
+      width:100%;
       padding:38px;
-      box-shadow:0 30px 90px rgba(0,0,0,.38);
+      border-radius:30px;
+      border:1px solid var(--line);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(24,34,53,.97),
+          rgba(17,24,39,.98)
+        );
+
+      box-shadow:0 30px 90px rgba(0,0,0,.4);
       overflow:hidden;
     }
 
-    .card:before{
+    .card::before{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(110deg, rgba(255,255,255,.035), transparent 35%, rgba(255,184,0,.025));
+
+      background:
+        linear-gradient(
+          110deg,
+          rgba(255,255,255,.035),
+          transparent 35%,
+          rgba(255,184,0,.025)
+        );
+
       pointer-events:none;
     }
 
     .hero{
+      position:relative;
+      z-index:1;
+
       display:grid;
       grid-template-columns:280px 1fr;
-      gap:48px;
+      gap:46px;
       align-items:center;
-      direction:ltr;
     }
 
     .logo-wrap{
-      direction:rtl;
       display:flex;
       justify-content:center;
       align-items:center;
     }
 
-    .logo-box{
-      width:260px;
-      aspect-ratio:1;
-      border-radius:54px;
-      padding:12px;
-      background:linear-gradient(145deg, rgba(255,184,0,.18), rgba(255,255,255,.03));
+    .logo{
+      width:250px;
+      height:250px;
+      margin:auto;
+      padding:10px;
+
+      border-radius:48px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,184,0,.16),
+          rgba(255,255,255,.025)
+        );
+
       border:1px solid rgba(255,184,0,.2);
+
       box-shadow:
-        0 0 0 10px rgba(255,184,0,.025),
+        0 0 0 9px rgba(255,184,0,.02),
         0 20px 60px rgba(0,0,0,.35),
-        0 0 70px rgba(255,184,0,.10);
+        0 0 55px rgba(255,184,0,.1);
     }
 
-    .logo-box img{
+    .logo img{
       width:100%;
       height:100%;
-      display:block;
       object-fit:cover;
-      border-radius:44px;
+      border-radius:39px;
+      display:block;
     }
 
-    .content{direction:rtl;text-align:right}
+    .content{
+      text-align:right;
+    }
 
-    .eyebrow{
+    .badge{
       display:inline-flex;
       align-items:center;
       gap:8px;
+
+      padding:8px 13px;
+      border-radius:999px;
+
       color:var(--yellow);
+
       background:rgba(255,184,0,.09);
       border:1px solid rgba(255,184,0,.16);
-      border-radius:999px;
-      padding:8px 13px;
+
       font-size:13px;
       font-weight:800;
-      margin-bottom:18px;
     }
 
-    .eyebrow span{
+    .badge::before{
+      content:"";
       width:7px;
       height:7px;
       border-radius:50%;
@@ -173,348 +221,1045 @@
     }
 
     h1{
-      margin:0;
-      font-size:clamp(38px,5vw,64px);
-      line-height:1.05;
-      letter-spacing:-1.5px;
+      margin:17px 0 5px;
+
+      font-size:clamp(42px,6vw,65px);
+      line-height:1;
+      letter-spacing:-2px;
     }
 
-    h1 .accent{color:var(--yellow)}
+    h1 span{
+      color:var(--yellow);
+    }
 
     .slogan{
-      margin:17px 0 10px;
-      font-size:clamp(22px,3vw,31px);
+      font-size:clamp(21px,3vw,30px);
       font-weight:900;
-      line-height:1.25;
+      margin:17px 0 9px;
+      line-height:1.3;
     }
 
     .desc{
       margin:0;
-      max-width:600px;
-      color:#D1D5DB;
-      font-size:17px;
+      color:#d1d5db;
+      font-size:16px;
       line-height:1.9;
     }
 
-    .download-btn{
+    .download{
+      position:relative;
       width:100%;
-      margin-top:26px;
       min-height:62px;
+
+      margin-top:25px;
+
       border:0;
-      border-radius:18px;
-      background:linear-gradient(135deg, var(--yellow), var(--yellow-2));
-      color:#111827;
+      border-radius:17px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--yellow),
+          var(--yellow-2)
+        );
+
+      color:var(--navy);
+
+      font-family:inherit;
       font-size:19px;
       font-weight:900;
+
       cursor:pointer;
-      box-shadow:0 14px 35px rgba(255,184,0,.20);
-      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
-      font-family:inherit;
+
+      box-shadow:
+        0 13px 35px rgba(255,184,0,.20);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease;
     }
 
-    .download-btn:hover{
+    .download:hover{
       transform:translateY(-2px);
-      box-shadow:0 18px 42px rgba(255,184,0,.30);
+
+      box-shadow:
+        0 18px 42px rgba(255,184,0,.30);
+
       filter:saturate(1.06);
     }
 
-    .download-btn:active{transform:translateY(0)}
-    .download-btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+    .download:active{
+      transform:translateY(0);
+    }
+
+    .download:disabled{
+      opacity:.65;
+      cursor:not-allowed;
+      transform:none;
+    }
 
     .stats{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:12px;
-      margin-top:14px;
+      margin-top:13px;
     }
 
     .stat{
-      min-height:78px;
-      border:1px solid var(--border);
+      padding:15px 16px;
+      min-height:74px;
+
+      border-radius:16px;
+      border:1px solid var(--line);
+
       background:rgba(255,255,255,.025);
-      border-radius:17px;
-      padding:14px 16px;
+
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
     }
 
-    .stat-label{color:var(--muted);font-size:13px}
+    .label{
+      color:var(--muted);
+      font-size:13px;
+    }
 
-    .stat-value{
+    .value{
       font-size:20px;
       font-weight:900;
-      color:var(--white);
       direction:ltr;
       unicode-bidi:plaintext;
     }
 
-    .info-row{
+    .info{
       display:flex;
-      gap:10px;
       flex-wrap:wrap;
-      margin-top:14px;
+      justify-content:flex-start;
+      gap:9px;
+      margin-top:13px;
     }
 
     .pill{
-      border:1px solid var(--border);
+      padding:9px 12px;
+
+      border-radius:13px;
+      border:1px solid var(--line);
+
       background:rgba(255,255,255,.025);
-      border-radius:14px;
-      padding:10px 13px;
-      color:#D1D5DB;
+
+      color:#d1d5db;
       font-size:13px;
     }
 
-    .pill b{color:var(--white)}
+    .pill b{
+      color:#fff;
+    }
 
-    .note{
-      margin-top:18px;
+    .status{
+      min-height:20px;
+      margin-top:15px;
+
       color:var(--muted);
       font-size:12px;
       line-height:1.7;
     }
 
     footer{
-      width:min(960px, calc(100% - 32px));
-      margin:0 auto;
-      padding:0 0 25px;
       text-align:center;
-      color:#6B7280;
+
+      padding:
+        0
+        16px
+        25px;
+
+      color:#6b7280;
       font-size:12px;
+      line-height:1.8;
     }
 
-    footer strong{color:#9CA3AF}
+    footer b{
+      color:#9ca3af;
+    }
 
     .toast{
       position:fixed;
+
       bottom:24px;
       left:50%;
-      transform:translate(-50%, 120px);
-      background:#0B1220;
+
+      transform:
+        translate(-50%,120px);
+
+      background:#0b1220;
       color:white;
+
       border:1px solid rgba(255,255,255,.12);
       border-radius:14px;
+
       padding:12px 16px;
-      box-shadow:0 15px 45px rgba(0,0,0,.35);
+
+      box-shadow:
+        0 15px 45px rgba(0,0,0,.35);
+
       opacity:0;
+
       transition:.25s ease;
-      z-index:10;
-      max-width:calc(100% - 32px);
+
+      z-index:100;
+
+      max-width:
+        calc(100% - 32px);
+
       text-align:center;
       font-size:13px;
     }
 
     .toast.show{
-      transform:translate(-50%, 0);
+      transform:
+        translate(-50%,0);
+
       opacity:1;
     }
 
-    @media (max-width:760px){
-      .topbar{padding-top:17px}
-      main{padding:24px 12px 42px}
-      .card{padding:24px 18px;border-radius:25px}
+    .loading{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+    }
+
+    .spinner{
+      width:17px;
+      height:17px;
+
+      border-radius:50%;
+
+      border:
+        2px solid rgba(17,24,39,.25);
+
+      border-top-color:
+        var(--navy);
+
+      animation:
+        spin .7s linear infinite;
+    }
+
+    @keyframes spin{
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    @media(max-width:720px){
+
+      header{
+        padding-top:17px;
+      }
+
+      main{
+        padding:
+          20px
+          12px
+          40px;
+      }
+
+      .card{
+        padding:
+          24px
+          17px;
+
+        border-radius:24px;
+      }
+
       .hero{
         grid-template-columns:1fr;
         gap:25px;
-        direction:rtl;
       }
-      .logo-box{width:min(210px,62vw);border-radius:42px}
-      .logo-box img{border-radius:34px}
-      .content{text-align:center}
-      .eyebrow{margin-bottom:14px}
-      .desc{margin:0 auto;font-size:15px;line-height:1.8}
-      .stats{text-align:right}
-      .info-row{justify-content:center}
-      .pill{font-size:12px}
-      h1{font-size:43px}
-      .slogan{font-size:22px}
+
+      .logo{
+        width:205px;
+        height:205px;
+        border-radius:40px;
+      }
+
+      .logo img{
+        border-radius:32px;
+      }
+
+      .content{
+        text-align:center;
+      }
+
+      .desc{
+        font-size:15px;
+      }
+
+      .stats{
+        text-align:right;
+      }
+
+      .info{
+        justify-content:center;
+      }
+
+      .pill{
+        font-size:12px;
+      }
+
+      h1{
+        font-size:43px;
+      }
+
+      .slogan{
+        font-size:22px;
+      }
     }
 
-    @media (max-width:390px){
-      .card{padding:20px 14px}
-      h1{font-size:37px}
-      .slogan{font-size:20px}
-      .download-btn{min-height:58px;font-size:17px}
-      .stats{grid-template-columns:1fr}
+    @media(max-width:390px){
+
+      .card{
+        padding:
+          20px
+          14px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:39px;
+      }
+
+      .slogan{
+        font-size:20px;
+      }
+
+      .download{
+        min-height:58px;
+        font-size:17px;
+      }
     }
   </style>
 </head>
 
 <body>
+
 <div class="page">
-  <header class="topbar">
-    <div class="brand" aria-label="وصّلها BM">
-      <span class="brand-dot"></span>
+
+  <header>
+    <div class="brand">
+      <span class="dot"></span>
       <span>وصّلها BM</span>
     </div>
   </header>
 
   <main>
-    <section class="shell" aria-label="تحميل تطبيق وصّلها BM">
+
+    <section class="shell">
+
       <div class="glow"></div>
 
       <div class="card">
+
         <div class="hero">
+
           <div class="logo-wrap">
-            <div class="logo-box">
-              <img src="assets/logo.png" alt="شعار وصّلها BM">
+
+            <div class="logo">
+
+              <img
+                src="assets/logo.png"
+                alt="لوجو وصّلها BM"
+              >
+
             </div>
+
           </div>
 
           <div class="content">
-            <div class="eyebrow"><span></span> التطبيق الرسمي</div>
 
-            <h1>وصّلها <span class="accent">BM</span></h1>
+            <div class="badge">
+              التطبيق الرسمي
+            </div>
 
-            <div class="slogan">اطلبها... وإحنا نوصلها!</div>
+            <h1>
+              وصّلها <span>BM</span>
+            </h1>
+
+            <div class="slogan">
+              اطلبها... وإحنا نوصلها!
+            </div>
 
             <p class="desc">
               حمّل تطبيق وصّلها BM واطلب أكلك المفضل بسهولة من مطاعمك المفضلة.
             </p>
 
-            <button id="downloadBtn" class="download-btn" type="button">
+            <button
+              id="downloadBtn"
+              class="download"
+              type="button"
+            >
               تحميل التطبيق
             </button>
 
             <div class="stats">
+
               <div class="stat">
-                <div class="stat-label">التحميلات</div>
-                <div id="downloadCount" class="stat-value">--</div>
+
+                <span class="label">
+                  ⬇️ عدد التحميلات
+                </span>
+
+                <span
+                  id="downloads"
+                  class="value"
+                >
+                  --
+                </span>
+
               </div>
 
               <div class="stat">
-                <div class="stat-label">المشاهدات</div>
-                <div id="viewCount" class="stat-value">--</div>
+
+                <span class="label">
+                  👁️ المشاهدات
+                </span>
+
+                <span
+                  id="views"
+                  class="value"
+                >
+                  --
+                </span>
+
               </div>
+
             </div>
 
-            <div class="info-row">
-              <div class="pill">📱 <b>Android</b></div>
-              <div class="pill">الإصدار <b id="version">1.0.0</b></div>
-              <div class="pill">APK <b id="apkName">BM.apk</b></div>
+            <div class="info">
+
+              <div class="pill">
+                📱 <b>Android</b>
+              </div>
+
+              <div class="pill">
+                الإصدار
+                <b id="version">
+                  1.0.0
+                </b>
+              </div>
+
+              <div class="pill">
+                APK
+                <b>
+                  BM.apk
+                </b>
+              </div>
+
+              <div class="pill">
+                الحجم
+                <b id="size">
+                  جاري الحساب...
+                </b>
+              </div>
+
             </div>
 
-            <div class="note" id="statusNote">
-              جاري جلب عدد التحميلات من GitHub...
+            <div
+              id="status"
+              class="status"
+            >
+              جاري جلب بيانات التطبيق...
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
   <footer>
-    <strong>وصّلها BM</strong> — اطلبها... وإحنا نوصلها!<br>
+
+    <b>
+      وصّلها BM
+    </b>
+
+    — اطلبها... وإحنا نوصلها!
+
+    <br>
+
     © 2026 وصّلها BM - جميع الحقوق محفوظة
+
   </footer>
+
 </div>
 
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div
+  id="toast"
+  class="toast"
+  role="status"
+  aria-live="polite"
+></div>
+
 
 <script>
-  // بيانات GitHub الصحيحة حسب الـRelease الذي أرسلته
+
+  /*
+   * ==========================================================
+   * إعدادات وصّلها BM
+   * ==========================================================
+   *
+   * بيانات GitHub الحالية:
+   *
+   * Username:
+   * wasalahabm2026
+   *
+   * Repository:
+   * download
+   *
+   * Release:
+   * v1.0.0
+   *
+   * APK:
+   * BM.apk
+   *
+   * رابط التحميل المباشر:
+   * https://github.com/wasalahabm2026/download/releases/download/v1.0.0/BM.apk
+   *
+   * ==========================================================
+   */
+
   const CONFIG = {
+
+    appName: "وصّلها BM",
+
+    version: "1.0.0",
+
     githubOwner: "wasalahabm2026",
+
     githubRepo: "download",
+
     releaseTag: "v1.0.0",
-    apkFileName: "BM.apk"
+
+    apkFileName: "BM.apk",
+
+    directDownloadUrl:
+      "https://github.com/wasalahabm2026/download/releases/download/v1.0.0/BM.apk"
+
   };
 
-  const $ = (id) => document.getElementById(id);
 
-  $("version").textContent = CONFIG.releaseTag.replace(/^v/i, "");
-  $("apkName").textContent = CONFIG.apkFileName;
+  /*
+   * ==========================================================
+   * عناصر الصفحة
+   * ==========================================================
+   */
 
-  let apkUrl = null;
+  const downloadBtn =
+    document.getElementById("downloadBtn");
 
-  function formatNumber(value) {
-    if (typeof value !== "number" || Number.isNaN(value)) return "--";
-    return new Intl.NumberFormat("ar-EG").format(value);
+  const downloadsElement =
+    document.getElementById("downloads");
+
+  const viewsElement =
+    document.getElementById("views");
+
+  const versionElement =
+    document.getElementById("version");
+
+  const sizeElement =
+    document.getElementById("size");
+
+  const statusElement =
+    document.getElementById("status");
+
+  const toastElement =
+    document.getElementById("toast");
+
+
+  /*
+   * ==========================================================
+   * البيانات الأساسية
+   * ==========================================================
+   */
+
+  versionElement.textContent =
+    CONFIG.version;
+
+
+  /*
+   * ==========================================================
+   * تنسيق الأرقام
+   * ==========================================================
+   */
+
+  function formatNumber(value){
+
+    const number =
+      Number(value);
+
+    if(
+      !Number.isFinite(number)
+    ){
+      return "--";
+    }
+
+    return new Intl.NumberFormat(
+      "ar-EG"
+    ).format(number);
+
   }
 
-  function showToast(message) {
-    const toast = $("toast");
-    toast.textContent = message;
-    toast.classList.add("show");
-    clearTimeout(window.__toastTimer);
-    window.__toastTimer = setTimeout(() => {
-      toast.classList.remove("show");
-    }, 3200);
-  }
 
-  async function loadGitHubRelease() {
-    const apiUrl =
-      "https://api.github.com/repos/" +
-      encodeURIComponent(CONFIG.githubOwner) +
-      "/" +
-      encodeURIComponent(CONFIG.githubRepo) +
-      "/releases/tags/" +
-      encodeURIComponent(CONFIG.releaseTag) +
-      "?_=" + Date.now();
+  /*
+   * ==========================================================
+   * رسالة صغيرة أسفل الشاشة
+   * ==========================================================
+   */
 
-    try {
-      const response = await fetch(apiUrl, {
-        method: "GET",
-        headers: {
-          "Accept": "application/vnd.github+json"
+  function showToast(message){
+
+    toastElement.textContent =
+      message;
+
+    toastElement.classList.add(
+      "show"
+    );
+
+    clearTimeout(
+      window.__toastTimer
+    );
+
+    window.__toastTimer =
+      setTimeout(
+        function(){
+
+          toastElement.classList.remove(
+            "show"
+          );
+
         },
-        cache: "no-store"
-      });
-
-      if (!response.ok) {
-        throw new Error("GitHub API HTTP " + response.status);
-      }
-
-      const release = await response.json();
-
-      const asset = (release.assets || []).find(
-        (item) => item.name === CONFIG.apkFileName
+        3000
       );
 
-      if (!asset) {
-        throw new Error(
-          "لم يتم العثور على " + CONFIG.apkFileName + " داخل الـRelease."
-        );
-      }
-
-      apkUrl = asset.browser_download_url;
-
-      $("downloadCount").textContent =
-        formatNumber(Number(asset.download_count || 0));
-
-      $("statusNote").textContent =
-        "عداد التحميلات متصل مباشرة بملف الـAPK على GitHub.";
-    } catch (error) {
-      console.error("GitHub Release error:", error);
-
-      $("downloadCount").textContent = "--";
-      $("statusNote").textContent =
-        "تعذر جلب عداد التحميلات حاليًا. تأكد من اتصال الإنترنت ثم حدّث الصفحة.";
-    }
   }
 
-  $("downloadBtn").addEventListener("click", async () => {
-    if (!apkUrl) {
-      await loadGitHubRelease();
+
+  /*
+   * ==========================================================
+   * تغيير رسالة الحالة
+   * ==========================================================
+   */
+
+  function setStatus(message){
+
+    statusElement.textContent =
+      message;
+
+  }
+
+
+  /*
+   * ==========================================================
+   * حساب حجم ملف الـAPK
+   * ==========================================================
+   */
+
+  function formatBytes(bytes){
+
+    if(
+      !Number.isFinite(bytes) ||
+      bytes <= 0
+    ){
+      return "--";
     }
 
-    if (!apkUrl) {
-      showToast("رابط التحميل غير متوفر حاليًا.");
-      return;
+    const units = [
+      "B",
+      "KB",
+      "MB",
+      "GB"
+    ];
+
+    let index = 0;
+
+    let size = bytes;
+
+    while(
+      size >= 1024 &&
+      index < units.length - 1
+    ){
+
+      size =
+        size / 1024;
+
+      index++;
+
     }
 
-    // التحميل من GitHub Release Asset مباشرة.
-    window.location.href = apkUrl;
-  });
+    return (
+      size.toFixed(
+        index === 0 ? 0 : 2
+      )
+      + " "
+      + units[index]
+    );
 
-  // GitHub Pages لا يوفر عداد مشاهدات إجماليًا حقيقيًا بدون خدمة خارجية.
-  $("viewCount").textContent = "--";
+  }
+
+
+  /*
+   * ==========================================================
+   * جلب معلومات Release من GitHub
+   * ==========================================================
+   *
+   * GitHub API يعطينا:
+   *
+   * - اسم الملف
+   * - حجم الملف
+   * - عدد مرات تحميل الملف
+   * - رابط التحميل
+   *
+   * ==========================================================
+   */
+
+  async function loadGitHubRelease(){
+
+    setStatus(
+      "جاري جلب بيانات التطبيق من GitHub..."
+    );
+
+    try{
+
+      const apiUrl =
+        "https://api.github.com/repos/" +
+        encodeURIComponent(
+          CONFIG.githubOwner
+        ) +
+        "/" +
+        encodeURIComponent(
+          CONFIG.githubRepo
+        ) +
+        "/releases/tags/" +
+        encodeURIComponent(
+          CONFIG.releaseTag
+        );
+
+
+      const response =
+        await fetch(
+          apiUrl,
+          {
+            method:"GET",
+
+            headers:{
+              "Accept":
+                "application/vnd.github+json"
+            },
+
+            cache:"no-store"
+          }
+        );
+
+
+      /*
+       * إذا GitHub رجع خطأ
+       */
+
+      if(
+        !response.ok
+      ){
+
+        throw new Error(
+          "GitHub API Error: " +
+          response.status
+        );
+
+      }
+
+
+      /*
+       * تحويل البيانات إلى JSON
+       */
+
+      const release =
+        await response.json();
+
+
+      /*
+       * البحث عن ملف الـAPK
+       */
+
+      const assets =
+        Array.isArray(
+          release.assets
+        )
+          ? release.assets
+          : [];
+
+
+      const asset =
+        assets.find(
+          function(item){
+
+            return (
+              item.name ===
+              CONFIG.apkFileName
+            );
+
+          }
+        );
+
+
+      /*
+       * لو الملف غير موجود
+       */
+
+      if(!asset){
+
+        throw new Error(
+          "لم يتم العثور على الملف " +
+          CONFIG.apkFileName +
+          " داخل Release."
+        );
+
+      }
+
+
+      /*
+       * ======================================================
+       * تحديث عدد التحميلات
+       * ======================================================
+       */
+
+      downloadsElement.textContent =
+        formatNumber(
+          asset.download_count
+        );
+
+
+      /*
+       * ======================================================
+       * تحديث حجم التطبيق
+       * ======================================================
+       */
+
+      sizeElement.textContent =
+        formatBytes(
+          asset.size
+        );
+
+
+      /*
+       * ======================================================
+       * تأكيد رابط التحميل
+       * ======================================================
+       *
+       * نستخدم الرابط المباشر المعروف لدينا.
+       *
+       * بهذه الطريقة الزر لا يعتمد على نجاح API.
+       *
+       * ======================================================
+       */
+
+      setStatus(
+        "التطبيق جاهز للتحميل. عدد التحميلات يتم قراءته مباشرة من GitHub."
+      );
+
+
+      console.log(
+        "GitHub Release loaded:",
+        release
+      );
+
+      console.log(
+        "APK asset:",
+        asset
+      );
+
+    }
+    catch(error){
+
+      console.error(
+        "GitHub Release Error:",
+        error
+      );
+
+
+      /*
+       * لو الـAPI فشل:
+       *
+       * لا نعطل زر التحميل.
+       *
+       * نخلي الرابط المباشر يعمل.
+       */
+
+      downloadsElement.textContent =
+        "--";
+
+
+      sizeElement.textContent =
+        "--";
+
+
+      setStatus(
+        "تعذر جلب عداد التحميلات حاليًا، لكن يمكنك تحميل التطبيق مباشرة."
+      );
+
+    }
+
+  }
+
+
+  /*
+   * ==========================================================
+   * زر تحميل التطبيق
+   * ==========================================================
+   *
+   * مهم جدًا:
+   *
+   * الزر يستخدم رابط GitHub Release المباشر.
+   *
+   * لا يحتاج إلى GitHub API لكي يعمل.
+   *
+   * ==========================================================
+   */
+
+  downloadBtn.addEventListener(
+    "click",
+    function(){
+
+      try{
+
+        /*
+         * تغيير حالة الزر
+         */
+
+        downloadBtn.disabled =
+          true;
+
+
+        downloadBtn.innerHTML =
+          '<span class="loading">' +
+          '<span class="spinner"></span>' +
+          'جاري بدء التحميل...' +
+          '</span>';
+
+
+        setStatus(
+          "جاري بدء تحميل تطبيق وصّلها BM..."
+        );
+
+
+        /*
+         * الانتقال إلى رابط الـAPK المباشر
+         */
+
+        window.location.href =
+          CONFIG.directDownloadUrl;
+
+
+        /*
+         * إعادة الزر بعد فترة
+         */
+
+        setTimeout(
+          function(){
+
+            downloadBtn.disabled =
+              false;
+
+            downloadBtn.textContent =
+              "تحميل التطبيق";
+
+          },
+          4000
+        );
+
+      }
+      catch(error){
+
+        console.error(
+          "Download error:",
+          error
+        );
+
+
+        downloadBtn.disabled =
+          false;
+
+        downloadBtn.textContent =
+          "تحميل التطبيق";
+
+
+        setStatus(
+          "حدث خطأ أثناء بدء التحميل."
+        );
+
+
+        showToast(
+          "تعذر بدء التحميل، حاول مرة أخرى."
+        );
+
+      }
+
+    }
+  );
+
+
+  /*
+   * ==========================================================
+   * عداد المشاهدات
+   * ==========================================================
+   *
+   * GitHub Pages نفسه لا يوفر API لعداد زيارات الموقع.
+   *
+   * لذلك لا نعرض رقمًا وهميًا.
+   *
+   * ==========================================================
+   */
+
+  viewsElement.textContent =
+    "--";
+
+
+  /*
+   * ==========================================================
+   * تحميل بيانات GitHub أول مرة
+   * ==========================================================
+   */
 
   loadGitHubRelease();
 
-  // تحديث العداد تلقائيًا كل دقيقة.
-  setInterval(loadGitHubRelease, 60000);
+
+  /*
+   * ==========================================================
+   * تحديث عداد التحميلات تلقائيًا
+   * ==========================================================
+   *
+   * كل دقيقة يتم طلب البيانات مرة أخرى.
+   *
+   * ==========================================================
+   */
+
+  setInterval(
+    function(){
+
+      loadGitHubRelease();
+
+    },
+    60000
+  );
+
+
 </script>
+
 </body>
 </html>
