@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="حمّل تطبيق وصّلها BM واطلب أكلك المفضل بسهولة من مطاعمك المفضلة.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="وصّلها BM | اطلبها... وإحنا نوصلها!">
+  <meta property="og:description" content="حمّل تطبيق وصّلها BM واطلب أكلك المفضل بسهولة.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="وصّلها BM | اطلبها... وإحنا نوصلها!">
+  <title>وصّلها BM | اطلبها... وإحنا نوصلها!</title>
+  <link rel="icon" href="assets/logo.png">
+
+  <style>
+    :root{
+      --yellow:#FFB800;
+      --yellow-2:#FFC933;
+      --navy:#111827;
+      --navy-2:#0B1220;
+      --card:#182235;
+      --muted:#9CA3AF;
+      --white:#fff;
+      --border:rgba(255,255,255,.09);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Tahoma, Arial, "Segoe UI", sans-serif;
+      color:var(--white);
+      background:
+        radial-gradient(circle at 50% 8%, rgba(255,184,0,.13), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(30,64,175,.12), transparent 28%),
+        var(--navy-2);
+      overflow-x:hidden;
+    }
+
+    .page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .topbar{
+      width:min(1120px, calc(100% - 32px));
+      margin:0 auto;
+      padding:22px 0 8px;
+      display:flex;
+      justify-content:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--white);
+      font-weight:800;
+      font-size:20px;
+    }
+
+    .brand-dot{
+      width:11px;
+      height:11px;
+      background:var(--yellow);
+      border-radius:50%;
+      box-shadow:0 0 22px rgba(255,184,0,.75);
+    }
+
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:34px 16px 60px;
+    }
+
+    .shell{
+      width:min(960px,100%);
+      position:relative;
+    }
+
+    .glow{
+      position:absolute;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background:rgba(255,184,0,.08);
+      filter:blur(65px);
+      top:5%;
+      left:50%;
+      transform:translateX(-50%);
+      pointer-events:none;
+    }
+
+    .card{
+      position:relative;
+      background:linear-gradient(145deg, rgba(24,34,53,.95), rgba(17,24,39,.96));
+      border:1px solid var(--border);
+      border-radius:32px;
+      padding:38px;
+      box-shadow:0 30px 90px rgba(0,0,0,.38);
+      overflow:hidden;
+    }
+
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(110deg, rgba(255,255,255,.035), transparent 35%, rgba(255,184,0,.025));
+      pointer-events:none;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:48px;
+      align-items:center;
+      direction:ltr;
+    }
+
+    .logo-wrap{
+      direction:rtl;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .logo-box{
+      width:260px;
+      aspect-ratio:1;
+      border-radius:54px;
+      padding:12px;
+      background:linear-gradient(145deg, rgba(255,184,0,.18), rgba(255,255,255,.03));
+      border:1px solid rgba(255,184,0,.2);
+      box-shadow:
+        0 0 0 10px rgba(255,184,0,.025),
+        0 20px 60px rgba(0,0,0,.35),
+        0 0 70px rgba(255,184,0,.10);
+    }
+
+    .logo-box img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      border-radius:44px;
+    }
+
+    .content{
+      direction:rtl;
+      text-align:right;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--yellow);
+      background:rgba(255,184,0,.09);
+      border:1px solid rgba(255,184,0,.16);
+      border-radius:999px;
+      padding:8px 13px;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .eyebrow span{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--yellow);
+      box-shadow:0 0 10px rgba(255,184,0,.9);
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(38px,5vw,64px);
+      line-height:1.05;
+      letter-spacing:-1.5px;
+    }
+
+    h1 .accent{color:var(--yellow)}
+
+    .slogan{
+      margin:17px 0 10px;
+      font-size:clamp(22px,3vw,31px);
+      font-weight:900;
+      line-height:1.25;
+    }
+
+    .desc{
+      margin:0;
+      max-width:600px;
+      color:#D1D5DB;
+      font-size:17px;
+      line-height:1.9;
+    }
+
+    .download-btn{
+      width:100%;
+      margin-top:26px;
+      min-height:62px;
+      border:0;
+      border-radius:18px;
+      background:linear-gradient(135deg, var(--yellow), var(--yellow-2));
+      color:#111827;
+      font-size:19px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 14px 35px rgba(255,184,0,.20);
+      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      font-family:inherit;
+    }
+
+    .download-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 42px rgba(255,184,0,.30);
+      filter:saturate(1.06);
+    }
+
+    .download-btn:active{transform:translateY(0)}
+    .download-btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+
+    .stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .stat{
+      min-height:78px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.025);
+      border-radius:17px;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .stat-label{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .stat-value{
+      font-size:20px;
+      font-weight:900;
+      color:var(--white);
+      direction:ltr;
+      unicode-bidi:plaintext;
+    }
+
+    .info-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .pill{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.025);
+      border-radius:14px;
+      padding:10px 13px;
+      color:#D1D5DB;
+      font-size:13px;
+    }
+
+    .pill b{color:var(--white)}
+
+    .note{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.7;
+    }
+
+    footer{
+      width:min(960px, calc(100% - 32px));
+      margin:0 auto;
+      padding:0 0 25px;
+      text-align:center;
+      color:#6B7280;
+      font-size:12px;
+    }
+
+    footer strong{color:#9CA3AF}
+
+    .toast{
+      position:fixed;
+      bottom:24px;
+      left:50%;
+      transform:translate(-50%, 120px);
+      background:#0B1220;
+      color:white;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      padding:12px 16px;
+      box-shadow:0 15px 45px rgba(0,0,0,.35);
+      opacity:0;
+      transition:.25s ease;
+      z-index:10;
+      max-width:calc(100% - 32px);
+      text-align:center;
+      font-size:13px;
+    }
+
+    .toast.show{
+      transform:translate(-50%, 0);
+      opacity:1;
+    }
+
+    @media (max-width:760px){
+      .topbar{padding-top:17px}
+      main{padding:24px 12px 42px}
+      .card{padding:24px 18px;border-radius:25px}
+      .hero{
+        grid-template-columns:1fr;
+        gap:25px;
+        direction:rtl;
+      }
+      .logo-box{
+        width:min(210px,62vw);
+        border-radius:42px;
+      }
+      .logo-box img{border-radius:34px}
+      .content{text-align:center}
+      .eyebrow{margin-bottom:14px}
+      .desc{margin:0 auto;font-size:15px;line-height:1.8}
+      .stats{text-align:right}
+      .info-row{justify-content:center}
+      .pill{font-size:12px}
+      h1{font-size:43px}
+      .slogan{font-size:22px}
+    }
+
+    @media (max-width:390px){
+      .card{padding:20px 14px}
+      h1{font-size:37px}
+      .slogan{font-size:20px}
+      .download-btn{min-height:58px;font-size:17px}
+      .stats{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="brand" aria-label="وصّلها BM">
+      <span class="brand-dot"></span>
+      <span>وصّلها BM</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell" aria-label="تحميل تطبيق وصّلها BM">
+      <div class="glow"></div>
+
+      <div class="card">
+        <div class="hero">
+          <div class="logo-wrap">
+            <div class="logo-box">
+              <img src="assets/logo.png" alt="شعار وصّلها BM">
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="eyebrow"><span></span> التطبيق الرسمي</div>
+
+            <h1>وصّلها <span class="accent">BM</span></h1>
+
+            <div class="slogan">اطلبها... وإحنا نوصلها!</div>
+
+            <p class="desc">
+              حمّل تطبيق وصّلها BM واطلب أكلك المفضل بسهولة من مطاعمك المفضلة.
+            </p>
+
+            <button id="downloadBtn" class="download-btn" type="button">
+              تحميل التطبيق
+            </button>
+
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-label">التحميلات</div>
+                <div id="downloadCount" class="stat-value">--</div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-label">المشاهدات</div>
+                <div id="viewCount" class="stat-value">--</div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="pill">📱 <b>Android</b></div>
+              <div class="pill">الإصدار <b id="version">1.0.0</b></div>
+              <div class="pill">الحجم <b id="size">--</b></div>
+            </div>
+
+            <div class="note" id="statusNote">
+              التحميل المباشر متاح من ملف التطبيق المرفق داخل المشروع.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>وصّلها BM</strong> — اطلبها... وإحنا نوصلها!<br>
+    © 2026 وصّلها BM - جميع الحقوق محفوظة
+  </footer>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+  /*
+    ==============================
+    إعدادات الموقع
+    ==============================
+
+    الوضع الافتراضي:
+    الموقع يستخدم ملف APK الموجود داخل:
+    downloads/waselha-bm.apk
+
+    بعد رفع APK كـ GitHub Release:
+    ضع بيانات GitHub هنا ليتم جلب رابط التحميل
+    وعدد التحميلات تلقائيًا.
+  */
+  const CONFIG = {
+    appName: "وصّلها BM",
+    version: "1.0.0",
+    appSize: "حوالي 1 MB",
+
+    // اترك useGitHubRelease = false إذا أردت التحميل من ملف المشروع.
+    useGitHubRelease: false,
+
+    githubOwner: "",
+    githubRepo: "",
+    releaseTag: "v1.0.0",
+    apkFileName: "waselha-bm.apk",
+
+    // التحميل المحلي من داخل المشروع.
+    localApkUrl: "downloads/waselha-bm.apk"
+  };
+
+  const $ = (id) => document.getElementById(id);
+
+  $("version").textContent = CONFIG.version;
+  $("size").textContent = CONFIG.appSize;
+
+  let apkUrl = CONFIG.localApkUrl;
+
+  function formatNumber(value) {
+    if (typeof value !== "number" || Number.isNaN(value)) return "--";
+    return new Intl.NumberFormat("ar-EG").format(value);
+  }
+
+  function showToast(message) {
+    const toast = $("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
+  }
+
+  async function loadGitHubRelease() {
+    if (!CONFIG.useGitHubRelease || !CONFIG.githubOwner || !CONFIG.githubRepo) {
+      return;
+    }
+
+    try {
+      const apiUrl =
+        `https://api.github.com/repos/${encodeURIComponent(CONFIG.githubOwner)}` +
+        `/${encodeURIComponent(CONFIG.githubRepo)}/releases/tags/${encodeURIComponent(CONFIG.releaseTag)}`;
+
+      const response = await fetch(apiUrl, {
+        headers: { "Accept": "application/vnd.github+json" },
+        cache: "no-store"
+      });
+
+      if (!response.ok) throw new Error("GitHub API request failed");
+
+      const release = await response.json();
+      const asset = Array.isArray(release.assets)
+        ? release.assets.find(a => a.name === CONFIG.apkFileName)
+        : null;
+
+      if (!asset) throw new Error("APK asset not found");
+
+      apkUrl = asset.browser_download_url;
+      $("downloadCount").textContent = formatNumber(asset.download_count);
+      $("statusNote").textContent = "رابط التحميل متصل بآخر إصدار على GitHub.";
+    } catch (error) {
+      console.error(error);
+      $("downloadCount").textContent = "--";
+      $("statusNote").textContent = "تعذر قراءة بيانات GitHub حاليًا، لكن زر التحميل يعمل بالمسار المحلي إذا كان الملف موجودًا.";
+    }
+  }
+
+  $("downloadBtn").addEventListener("click", () => {
+    if (!apkUrl) {
+      showToast("رابط التحميل غير متوفر حاليًا.");
+      return;
+    }
+
+    // Direct download/open of the APK.
+    window.location.href = apkUrl;
+  });
+
+  // لا نستخدم localStorage كعداد مشاهدات إجمالي؛ GitHub Pages وحده لا يوفر ذلك.
+  $("viewCount").textContent = "--";
+
+  loadGitHubRelease();
+</script>
+</body>
+</html>
