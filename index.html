@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#111827"
+  >
+
+  <meta
+    name="description"
+    content="وصّلها BM - اطلبها... وإحنا نوصلها! حمّل التطبيق الآن."
+  >
+
+  <meta
+    property="og:title"
+    content="وصّلها BM | اطلبها... وإحنا نوصلها!"
+  >
+
+  <meta
+    property="og:description"
+    content="حمّل تطبيق وصّلها BM واطلب أكلك المفضل بسهولة."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <title>
+    وصّلها BM | اطلبها... وإحنا نوصلها!
+  </title>
+
+
+  <style>
+
+    :root {
+
+      --yellow: #FFB800;
+      --yellow-light: #FFC933;
+
+      --navy: #111827;
+      --navy-dark: #0b1220;
+
+      --card: #182235;
+
+      --white: #ffffff;
+
+      --muted: #9ca3af;
+
+      --text-light: #d1d5db;
+
+      --line: rgba(255,255,255,.09);
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+      color: var(--white);
+
+      background:
+
+        radial-gradient(
+          circle at 50% 5%,
+          rgba(255,184,0,.13),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 10% 80%,
+          rgba(30,64,175,.10),
+          transparent 28%
+        ),
+
+        var(--navy-dark);
+
+      overflow-x: hidden;
+
+    }
+
+
+    .page {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+
+    /* ==============================
+       HEADER
+       ============================== */
+
+    header {
+
+      padding: 24px 18px 10px;
+
+      text-align: center;
+
+    }
+
+
+    .brand {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      font-size: 20px;
+
+      font-weight: 900;
+
+    }
+
+
+    .dot {
+
+      width: 10px;
+
+      height: 10px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      box-shadow:
+        0 0 18px rgba(255,184,0,.75);
+
+    }
+
+
+    /* ==============================
+       MAIN
+       ============================== */
+
+    main {
+
+      flex: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 30px 16px 55px;
+
+    }
+
+
+    .card {
+
+      width: min(920px,100%);
+
+      padding: 38px;
+
+      border-radius: 30px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+
+        linear-gradient(
+          145deg,
+          rgba(24,34,53,.97),
+          rgba(17,24,39,.98)
+        );
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,.40);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    .card::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        linear-gradient(
+          110deg,
+          rgba(255,255,255,.035),
+          transparent 35%,
+          rgba(255,184,0,.025)
+        );
+
+      pointer-events: none;
+
+    }
+
+
+    /* ==============================
+       HERO
+       ============================== */
+
+    .hero {
+
+      display: grid;
+
+      grid-template-columns: 280px 1fr;
+
+      gap: 46px;
+
+      align-items: center;
+
+      position: relative;
+
+      z-index: 1;
+
+    }
+
+
+    /* ==============================
+       LOGO
+       ============================== */
+
+    .logo {
+
+      width: 250px;
+
+      height: 250px;
+
+      margin: auto;
+
+      padding: 10px;
+
+      border-radius: 48px;
+
+      background:
+        rgba(255,184,0,.08);
+
+      border:
+        1px solid rgba(255,184,0,.20);
+
+      box-shadow:
+
+        0 0 55px
+        rgba(255,184,0,.10),
+
+        0 20px 50px
+        rgba(0,0,0,.30);
+
+    }
+
+
+    .logo img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      border-radius: 39px;
+
+      display: block;
+
+    }
+
+
+    /* ==============================
+       CONTENT
+       ============================== */
+
+    .content {
+
+      text-align: right;
+
+    }
+
+
+    .badge {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding: 8px 13px;
+
+      border-radius: 999px;
+
+      color: var(--yellow);
+
+      background:
+        rgba(255,184,0,.09);
+
+      border:
+        1px solid rgba(255,184,0,.16);
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+    }
+
+
+    .badge::before {
+
+      content: "";
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      box-shadow:
+        0 0 10px rgba(255,184,0,.9);
+
+    }
+
+
+    h1 {
+
+      margin: 14px 0 0;
+
+      font-size:
+        clamp(42px,6vw,65px);
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+
+      font-weight: 900;
+
+    }
+
+
+    h1 span {
+
+      color: var(--yellow);
+
+    }
+
+
+    .slogan {
+
+      font-size:
+        clamp(21px,3vw,30px);
+
+      font-weight: 900;
+
+      margin: 17px 0 9px;
+
+      line-height: 1.3;
+
+    }
+
+
+    .desc {
+
+      margin: 0;
+
+      color: var(--text-light);
+
+      font-size: 16px;
+
+      line-height: 1.9;
+
+    }
+
+
+    /* ==============================
+       DOWNLOAD BUTTON
+       ============================== */
+
+    .download {
+
+      width: 100%;
+
+      min-height: 62px;
+
+      margin-top: 18px;
+
+      border: 0;
+
+      border-radius: 17px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          var(--yellow),
+          var(--yellow-light)
+        );
+
+      color: var(--navy);
+
+      font-family: inherit;
+
+      font-size: 19px;
+
+      font-weight: 900;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 13px 35px
+        rgba(255,184,0,.20);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease;
+
+    }
+
+
+    .download:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 18px 42px
+        rgba(255,184,0,.30);
+
+      filter: saturate(1.06);
+
+    }
+
+
+    .download:active {
+
+      transform: translateY(0);
+
+    }
+
+
+    .download:disabled {
+
+      opacity: .65;
+
+      cursor: not-allowed;
+
+      transform: none;
+
+    }
+
+
+    /* ==============================
+       STATS
+       ============================== */
+
+    .stats {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 13px;
+
+    }
+
+
+    .stat {
+
+      padding: 15px 16px;
+
+      min-height: 74px;
+
+      border-radius: 16px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+        rgba(255,255,255,.025);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+
+    .label {
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+    }
+
+
+    .value {
+
+      font-size: 20px;
+
+      font-weight: 900;
+
+      direction: ltr;
+
+      unicode-bidi: plaintext;
+
+    }
+
+
+    /* ==============================
+       INFO
+       ============================== */
+
+    .info {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: flex-start;
+
+      gap: 9px;
+
+      margin-top: 13px;
+
+    }
+
+
+    .pill {
+
+      padding: 9px 12px;
+
+      border-radius: 13px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+        rgba(255,255,255,.025);
+
+      color: var(--text-light);
+
+      font-size: 13px;
+
+    }
+
+
+    .pill b {
+
+      color: #fff;
+
+    }
+
+
+    /* ==============================
+       STATUS
+       ============================== */
+
+    .status {
+
+      min-height: 20px;
+
+      margin-top: 15px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* ==============================
+       FOOTER
+       ============================== */
+
+    footer {
+
+      text-align: center;
+
+      padding: 0 16px 25px;
+
+      color: #6b7280;
+
+      font-size: 12px;
+
+      line-height: 1.8;
+
+    }
+
+
+    footer b {
+
+      color: #9ca3af;
+
+    }
+
+
+    /* ==============================
+       LOADING
+       ============================== */
+
+    .loading {
+
+      display: inline-block;
+
+      width: 14px;
+
+      height: 14px;
+
+      border:
+        2px solid
+        rgba(255,255,255,.25);
+
+      border-top-color:
+        var(--yellow);
+
+      border-radius: 50%;
+
+      animation:
+        spin .8s linear infinite;
+
+      vertical-align: middle;
+
+      margin-left: 5px;
+
+    }
+
+
+    @keyframes spin {
+
+      to {
+
+        transform:
+          rotate(360deg);
+
+      }
+
+    }
+
+
+    /* ==============================
+       MOBILE
+       ============================== */
+
+    @media(max-width:720px) {
+
+      main {
+
+        padding:
+          20px 12px 40px;
+
+      }
+
+
+      .card {
+
+        padding:
+          24px 17px;
+
+        border-radius: 24px;
+
+      }
+
+
+      .hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+      }
+
+
+      .logo {
+
+        width: 205px;
+
+        height: 205px;
+
+        border-radius: 40px;
+
+      }
+
+
+      .logo img {
+
+        border-radius: 32px;
+
+      }
+
+
+      .content {
+
+        text-align: center;
+
+      }
+
+
+      .desc {
+
+        font-size: 15px;
+
+      }
+
+
+      .stats {
+
+        text-align: right;
+
+      }
+
+
+      .info {
+
+        justify-content: center;
+
+      }
+
+    }
+
+
+    @media(max-width:390px) {
+
+      .stats {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      h1 {
+
+        font-size: 39px;
+
+      }
+
+
+      .slogan {
+
+        font-size: 20px;
+
+      }
+
+
+      .download {
+
+        min-height: 58px;
+
+        font-size: 17px;
+
+      }
+
+    }
+
+
+    /* ==============================
+       INSTALL GUIDE BUTTON
+       ============================== */
+
+    .guide-box {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(239,68,68,.35);
+      background: rgba(239,68,68,.07);
+      text-align: center;
+    }
+
+    .guide-warning {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(239,68,68,.16);
+      color: #fca5a5;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .guide-text {
+      margin: 0 0 12px;
+      color: var(--text-light);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .guide-text b { color: #fff; }
+
+    .guide-btn {
+      width: 100%;
+      min-height: 54px;
+      border-radius: 15px;
+      border: 2px solid var(--yellow);
+      background: transparent;
+      color: var(--yellow);
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+      animation: guidePulse 1.8s ease-in-out infinite;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .guide-btn:hover {
+      background: var(--yellow);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    @keyframes guidePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,184,0,.45); }
+      50%      { box-shadow: 0 0 0 9px rgba(255,184,0,0); }
+    }
+
+
+    /* ==============================
+       INSTALL GUIDE MODAL
+       ============================== */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      background: rgba(5,9,18,.88);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-box {
+      width: min(900px, 100%);
+      max-height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: var(--navy);
+      box-shadow: 0 30px 90px rgba(0,0,0,.6);
+      transform: translateY(20px) scale(.97);
+      transition: transform .3s ease;
+    }
+
+    .modal.open .modal-box {
+      transform: none;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .modal-title span {
+      color: var(--yellow);
+      direction: ltr;
+      unicode-bidi: plaintext;
+    }
+
+    .close-btn {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover { background: rgba(255,255,255,.14); }
+
+    .progress {
+      height: 6px;
+      border-radius: 99px;
+      background: rgba(255,255,255,.1);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--yellow), var(--yellow-light));
+      transition: width .4s ease;
+    }
+
+    .stage {
+      display: grid;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #000;
+      min-height: 220px;
+      touch-action: pan-y;
+    }
+
+    .stage > * {
+      grid-area: 1 / 1;
+    }
+
+    .stage img {
+      width: 100%;
+      max-height: 68vh;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+    }
+
+    .stage .img-error {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .enter-next  { animation: enterNext  .45s ease both; }
+    .leave-next  { animation: leaveNext  .45s ease both; }
+    .enter-prev  { animation: enterPrev  .45s ease both; }
+    .leave-prev  { animation: leavePrev  .45s ease both; }
+    .enter-first { animation: enterFirst .45s ease both; }
+
+    @keyframes enterNext  { from { opacity: 0; transform: translateX(-60px) scale(.96); } to { opacity: 1; transform: none; } }
+    @keyframes leaveNext  { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateX(60px) scale(.96); } }
+    @keyframes enterPrev  { from { opacity: 0; transform: translateX(60px) scale(.96); }  to { opacity: 1; transform: none; } }
+    @keyframes leavePrev  { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateX(-60px) scale(.96); } }
+    @keyframes enterFirst { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+
+    .modal-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .step-count {
+      color: var(--text-light);
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav-btn {
+      min-height: 50px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .nav-btn:hover { transform: translateY(-2px); }
+
+    .nav-next {
+      flex: 1;
+      max-width: 280px;
+      background: linear-gradient(135deg, var(--yellow), var(--yellow-light));
+      color: var(--navy);
+    }
+
+    .nav-prev {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .nav-prev:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    @media (max-width: 520px) {
+      .modal-box { padding: 12px; border-radius: 20px; }
+      .nav-btn { padding: 0 14px; font-size: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .guide-btn, .enter-next, .leave-next, .enter-prev, .leave-prev, .enter-first { animation: none; }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="brand">
+
+      <span class="dot"></span>
+
+      <span>
+        وصّلها BM
+      </span>
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN -->
+
+  <main>
+
+    <section
+      class="card"
+      aria-label="تحميل تطبيق وصّلها BM"
+    >
+
+
+      <div class="hero">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+          <img
+            src="assets/logo.png"
+            alt="لوجو وصّلها BM"
+          >
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+          <div class="badge">
+
+            التطبيق الرسمي
+
+          </div>
+
+
+          <h1>
+
+            وصّلها
+
+            <span>
+              BM
+            </span>
+
+          </h1>
+
+
+          <!-- DOWNLOAD BUTTON -->
+
+          <button
+            id="downloadBtn"
+            class="download"
+            type="button"
+          >
+
+            تحميل التطبيق
+
+          </button>
+
+
+
+          <!-- INSTALL GUIDE -->
+
+          <div class="guide-box">
+
+
+
+            <p class="guide-text">
+              <b>لازم تقرأ طريقة التثبيت قبل ما تدوس تحميل</b>
+              عشان التطبيق يتثبت صح على موبايلك.
+            </p>
+
+            <button
+              id="guideBtn"
+              class="guide-btn"
+              type="button"
+            >
+              📖 طريقة تثبيت البرنامج
+            </button>
+
+          </div>
+
+
+          <!-- STATS -->
+
+          <div class="stats">
+
+
+            <div class="stat">
+
+              <span class="label">
+
+                ⬇️ عدد التحميلات
+
+              </span>
+
+              <span
+                id="downloads"
+                class="value"
+              >
+
+                --
+
+              </span>
+
+            </div>
+
+
+            <div class="stat">
+
+              <span class="label">
+
+                👁️ المشاهدات
+
+              </span>
+
+              <span
+                id="views"
+                class="value"
+              >
+
+                --
+
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+          <!-- INFO -->
+
+          <div class="info">
+
+
+            <div class="pill">
+
+              📱
+
+              <b>
+                Android
+              </b>
+
+            </div>
+
+
+            <div class="pill">
+
+              الإصدار
+
+              <b id="version">
+                1.0.0
+              </b>
+
+            </div>
+
+
+            <div class="pill">
+
+              APK
+
+              <b>
+                BM.apk
+              </b>
+
+            </div>
+
+
+          </div>
+
+
+          <!-- STATUS -->
+
+          <div
+            id="status"
+            class="status"
+          >
+
+            جاري جلب عدد التحميلات...
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <b>
+      وصّلها BM
+    </b>
+
+    — اطلبها... وإحنا نوصلها!
+
+    <br>
+
+    © 2026 وصّلها BM
+    - جميع الحقوق محفوظة
+
+  </footer>
+
+
+</div>
+
+
+
+<!-- INSTALL GUIDE MODAL -->
+
+<div
+  id="guideModal"
+  class="modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="طريقة تثبيت البرنامج"
+>
+
+  <div class="modal-box">
+
+    <div class="modal-head">
+
+      <div class="modal-title">
+        📖 طريقة تثبيت البرنامج
+      </div>
+
+      <button
+        id="closeGuide"
+        class="close-btn"
+        type="button"
+        aria-label="إغلاق"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <div class="progress">
+      <div id="progressFill" class="progress-fill"></div>
+    </div>
+
+    <div id="stage" class="stage"></div>
+
+    <div class="modal-foot">
+
+      <button
+        id="nextStep"
+        class="nav-btn nav-next"
+        type="button"
+      >
+        الخطوة التالية ◀
+      </button>
+
+      <span id="stepCount" class="step-count">
+        الخطوة 1 من 8
+      </span>
+
+      <button
+        id="prevStep"
+        class="nav-btn nav-prev"
+        type="button"
+      >
+        ▶ السابقة
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+
+/*
+=====================================================
+إعدادات الموقع
+=====================================================
+*/
+
+
+const CONFIG = {
+
+
+  /*
+  اسم التطبيق
+  */
+
+  appName:
+    "وصّلها BM",
+
+
+  /*
+  إصدار التطبيق
+  */
+
+  version:
+    "1.0.0",
+
+
+  /*
+  ===================================================
+  رابط APK الحقيقي
+  ===================================================
+
+  ده رابط ملف BM.apk الموجود في GitHub Release
+  */
+
+  apkUrl:
+    "https://github.com/wasalahabm2026/download/releases/download/v1.0.0/BM.apk",
+
+
+  /*
+  ===================================================
+  إعدادات العداد
+  ===================================================
+
+  نستخدم عدادًا مركزيًا مستقلًا عن GitHub.
+
+  Namespace:
+  wasalahabm2026
+
+  Key:
+  downloads
+
+  كل ضغطة على تحميل = +1
+  */
+
+  counterNamespace:
+    "wasalahabm2026",
+
+
+  counterKey:
+    "downloads",
+
+
+  /*
+  عداد المشاهدات
+
+  كل فتح للصفحة = +1
+
+  لو مش عايزه ممكن نخليه false.
+  */
+
+  countViews:
+    true
+
+};
+
+
+/*
+=====================================================
+عناصر الصفحة
+=====================================================
+*/
+
+
+const downloadBtn =
+  document.getElementById(
+    "downloadBtn"
+  );
+
+
+const downloadsElement =
+  document.getElementById(
+    "downloads"
+  );
+
+
+const viewsElement =
+  document.getElementById(
+    "views"
+  );
+
+
+const statusElement =
+  document.getElementById(
+    "status"
+  );
+
+
+const versionElement =
+  document.getElementById(
+    "version"
+  );
+
+
+/*
+=====================================================
+عرض الإصدار
+=====================================================
+*/
+
+
+versionElement.textContent =
+  CONFIG.version;
+
+
+/*
+=====================================================
+تنسيق الأرقام
+=====================================================
+*/
+
+
+function formatNumber(number) {
+
+
+  if (
+    typeof number !== "number" ||
+    Number.isNaN(number)
+  ) {
+
+    return "--";
+
+  }
+
+
+  return new Intl.NumberFormat(
+    "ar-EG"
+  ).format(number);
+
+}
+
+
+/*
+=====================================================
+تغيير حالة الموقع
+=====================================================
+*/
+
+
+function setStatus(message) {
+
+  statusElement.innerHTML =
+    message;
+
+}
+
+
+/*
+=====================================================
+رابط Counter API
+=====================================================
+*/
+
+
+function counterUrl(
+  type
+) {
+
+
+  return (
+
+    "https://abacus.jasoncameron.dev/" +
+
+    type +
+
+    "/" +
+
+    encodeURIComponent(
+      CONFIG.counterNamespace
+    ) +
+
+    "/" +
+
+    encodeURIComponent(
+      CONFIG.counterKey
+    )
+
+  );
+
+}
+
+
+/*
+=====================================================
+قراءة عداد التحميلات
+=====================================================
+*/
+
+
+async function getDownloadCount() {
+
+
+  try {
+
+
+    const response =
+      await fetch(
+
+        counterUrl("get"),
+
+        {
+
+          method:
+            "GET",
+
+          cache:
+            "no-store"
+
+        }
+
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Counter API error: " +
+        response.status
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    /*
+    API يرجع:
+
+    {
+      "value": 123
+    }
+    */
+
+
+    const value =
+      Number(data.value);
+
+
+    if (
+      Number.isFinite(value)
+    ) {
+
+      downloadsElement.textContent =
+        formatNumber(value);
+
+    }
+
+
+  }
+
+  catch(error) {
+
+
+    console.error(
+      "Download counter error:",
+      error
+    );
+
+
+    downloadsElement.textContent =
+      "--";
+
+  }
+
+}
+
+
+/*
+=====================================================
+زيادة عداد التحميلات
+=====================================================
+*/
+
+
+async function incrementDownloadCount() {
+
+
+  try {
+
+
+    /*
+    hit = زيادة العداد + إرجاع القيمة الجديدة
+    */
+
+    const response =
+      await fetch(
+
+        counterUrl("hit"),
+
+        {
+
+          method:
+            "GET",
+
+          cache:
+            "no-store"
+
+        }
+
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Counter increment error: " +
+        response.status
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    /*
+    القيمة الجديدة
+    */
+
+    const newValue =
+      Number(data.value);
+
+
+    if (
+      Number.isFinite(newValue)
+    ) {
+
+      /*
+      تحديث الرقم فورًا
+      */
+
+      downloadsElement.textContent =
+        formatNumber(newValue);
+
+    }
+
+
+    return true;
+
+  }
+
+  catch(error) {
+
+
+    console.error(
+      "Download counter increment error:",
+      error
+    );
+
+
+    return false;
+
+  }
+
+}
+
+
+/*
+=====================================================
+عداد المشاهدات
+=====================================================
+*/
+
+
+async function incrementViewCount() {
+
+
+  if (!CONFIG.countViews) {
+
+    viewsElement.textContent =
+      "--";
+
+    return;
+
+  }
+
+
+  try {
+
+
+    /*
+    نستخدم مفتاح مختلف للمشاهدات
+    */
+
+    const viewUrl =
+
+      "https://abacus.jasoncameron.dev/hit/" +
+
+      encodeURIComponent(
+        CONFIG.counterNamespace
+      ) +
+
+      "/views";
+
+
+    const response =
+      await fetch(
+
+        viewUrl,
+
+        {
+
+          method:
+            "GET",
+
+          cache:
+            "no-store"
+
+        }
+
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "View counter error"
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    const value =
+      Number(data.value);
+
+
+    if (
+      Number.isFinite(value)
+    ) {
+
+      viewsElement.textContent =
+        formatNumber(value);
+
+    }
+
+
+  }
+
+  catch(error) {
+
+
+    console.error(
+      "View counter error:",
+      error
+    );
+
+
+    viewsElement.textContent =
+      "--";
+
+  }
+
+}
+
+
+/*
+=====================================================
+تحميل البيانات عند فتح الموقع
+=====================================================
+*/
+
+
+getDownloadCount();
+
+
+/*
+=====================================================
+عداد المشاهدات
+=====================================================
+*/
+
+
+incrementViewCount();
+
+
+/*
+=====================================================
+زر تحميل التطبيق
+=====================================================
+*/
+
+
+downloadBtn.addEventListener(
+
+  "click",
+
+  async function() {
+
+
+    /*
+    منع الضغط المكرر
+    */
+
+    downloadBtn.disabled =
+      true;
+
+
+    /*
+    تغيير النص مؤقتًا
+    */
+
+    downloadBtn.textContent =
+      "جاري تجهيز التحميل...";
+
+
+    setStatus(
+      '<span class="loading"></span> جاري تسجيل التحميل...'
+    );
+
+
+    /*
+    =================================================
+    زيادة العداد
+    =================================================
+
+    نستنى نتيجة العداد أولًا.
+
+    بمجرد نجاح العملية:
+    الرقم يظهر فورًا.
+    */
+
+    const counted =
+      await incrementDownloadCount();
+
+
+    /*
+    =================================================
+    لو العداد اشتغل
+    =================================================
+    */
+
+    if (counted) {
+
+
+      setStatus(
+        "تم تسجيل التحميل، جاري فتح التطبيق..."
+      );
+
+
+    }
+
+    else {
+
+
+      /*
+      حتى لو خدمة العداد لم تعمل،
+      لا نمنع المستخدم من تحميل التطبيق.
+      */
+
+      setStatus(
+        "جاري فتح تحميل التطبيق..."
+      );
+
+    }
+
+
+    /*
+    =================================================
+    فتح APK
+    =================================================
+
+    نستخدم رابط GitHub المباشر.
+    */
+
+    window.location.href =
+      CONFIG.apkUrl;
+
+  }
+
+);
+
+
+/*
+=====================================================
+تحديث عداد التحميلات تلقائيًا
+كل دقيقة
+=====================================================
+*/
+
+
+setInterval(
+
+  function() {
+
+    getDownloadCount();
+
+  },
+
+  60000
+
+);
+
+
+/*
+=====================================================
+شرح طريقة التثبيت (الصور من 1 إلى 8)
+=====================================================
+
+الصور موجودة في المسار:
+assets/1.jpg
+assets/2.jpg
+...
+assets/8.jpg
+*/
+
+const GUIDE_TOTAL = 8;
+
+const GUIDE_FOLDER = "assets/";
+
+const GUIDE_EXT = ".jpg";
+
+
+const guideBtn =
+  document.getElementById("guideBtn");
+
+const guideModal =
+  document.getElementById("guideModal");
+
+const closeGuide =
+  document.getElementById("closeGuide");
+
+const stage =
+  document.getElementById("stage");
+
+const nextStepBtn =
+  document.getElementById("nextStep");
+
+const prevStepBtn =
+  document.getElementById("prevStep");
+
+const stepCount =
+  document.getElementById("stepCount");
+
+const progressFill =
+  document.getElementById("progressFill");
+
+
+let guideIndex = 0;
+
+let guideBusy = false;
+
+
+/*
+تحميل الصور مسبقًا عشان الانتقال يبقى سلس
+*/
+
+function preloadGuideImages() {
+
+  for (let n = 1; n <= GUIDE_TOTAL; n++) {
+
+    const img = new Image();
+
+    img.src = GUIDE_FOLDER + n + GUIDE_EXT;
+
+  }
+
+}
+
+
+function buildSlide(index) {
+
+  const n = index + 1;
+
+  const img = document.createElement("img");
+
+  img.src = GUIDE_FOLDER + n + GUIDE_EXT;
+
+  img.alt = "خطوة التثبيت رقم " + n;
+
+  img.draggable = false;
+
+  img.onerror = function() {
+
+    const box = document.createElement("div");
+
+    box.className = img.className + " img-error";
+
+    box.textContent =
+      "تعذر تحميل الصورة " + n + GUIDE_EXT;
+
+    img.replaceWith(box);
+
+  };
+
+  return img;
+
+}
+
+
+function updateGuideUI() {
+
+  stepCount.textContent =
+    "الخطوة " + (guideIndex + 1) + " من " + GUIDE_TOTAL;
+
+  progressFill.style.width =
+    ((guideIndex + 1) / GUIDE_TOTAL * 100) + "%";
+
+  prevStepBtn.disabled =
+    guideIndex === 0;
+
+  nextStepBtn.textContent =
+    guideIndex === GUIDE_TOTAL - 1
+      ? "تمام، فهمت ✓"
+      : "الخطوة التالية ◀";
+
+}
+
+
+/*
+dir:
+ "first" = أول ظهور
+ "next"  = الخطوة التالية
+ "prev"  = الخطوة السابقة
+*/
+
+function showStep(index, dir) {
+
+  if (guideBusy) return;
+
+  const old = stage.firstElementChild;
+
+  const slide = buildSlide(index);
+
+  slide.classList.add("enter-" + dir);
+
+  stage.appendChild(slide);
+
+  if (old && dir !== "first") {
+
+    guideBusy = true;
+
+    old.classList.remove("enter-next", "enter-prev", "enter-first");
+
+    old.classList.add("leave-" + dir);
+
+    setTimeout(function() {
+
+      old.remove();
+
+      guideBusy = false;
+
+    }, 450);
+
+  }
+
+  else if (old) {
+
+    old.remove();
+
+  }
+
+  guideIndex = index;
+
+  updateGuideUI();
+
+}
+
+
+function openGuide() {
+
+  stage.innerHTML = "";
+
+  guideBusy = false;
+
+  showStep(0, "first");
+
+  guideModal.classList.add("open");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+
+function closeGuideModal() {
+
+  guideModal.classList.remove("open");
+
+  document.body.style.overflow = "";
+
+}
+
+
+function goNext() {
+
+  if (guideBusy) return;
+
+  if (guideIndex < GUIDE_TOTAL - 1) {
+
+    showStep(guideIndex + 1, "next");
+
+  }
+
+  else {
+
+    closeGuideModal();
+
+  }
+
+}
+
+
+function goPrev() {
+
+  if (guideBusy) return;
+
+  if (guideIndex > 0) {
+
+    showStep(guideIndex - 1, "prev");
+
+  }
+
+}
+
+
+guideBtn.addEventListener("click", function() {
+
+  preloadGuideImages();
+
+  openGuide();
+
+});
+
+closeGuide.addEventListener("click", closeGuideModal);
+
+nextStepBtn.addEventListener("click", goNext);
+
+prevStepBtn.addEventListener("click", goPrev);
+
+
+/*
+الضغط خارج الصندوق يقفل
+*/
+
+guideModal.addEventListener("click", function(e) {
+
+  if (e.target === guideModal) closeGuideModal();
+
+});
+
+
+/*
+الكيبورد: الأسهم و Escape
+(في الصفحة العربية: السهم الأيسر = التالي)
+*/
+
+document.addEventListener("keydown", function(e) {
+
+  if (!guideModal.classList.contains("open")) return;
+
+  if (e.key === "Escape") closeGuideModal();
+
+  if (e.key === "ArrowLeft") goNext();
+
+  if (e.key === "ArrowRight") goPrev();
+
+});
+
+
+/*
+السحب بالإصبع على الموبايل
+سحب لليمين = التالي (اتجاه عربي)
+*/
+
+let touchX = null;
+
+stage.addEventListener("touchstart", function(e) {
+
+  touchX = e.touches[0].clientX;
+
+}, { passive: true });
+
+stage.addEventListener("touchend", function(e) {
+
+  if (touchX === null) return;
+
+  const diff = e.changedTouches[0].clientX - touchX;
+
+  touchX = null;
+
+  if (Math.abs(diff) < 50) return;
+
+  if (diff > 0) goNext();
+
+  else goPrev();
+
+}, { passive: true });
+
+
+</script>
+
+
+</body>
+
+</html>
